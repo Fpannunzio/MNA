@@ -12,9 +12,9 @@ x = ones(n+1,1) * (- 2 - a^2*h^2);
 
 M = diag(ones(n,1),1) + diag(ones(n,1),-1) + diag(x);
 
-M(n+1,n) = 2;
+M(n+1,n) = 2
 
-V = [ -y0 zeros(1, n-1) -2*h]
+V = [ -y0 zeros(1, n-1) -2*h];
 
 P = inv(M)*V';
 

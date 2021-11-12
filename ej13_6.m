@@ -1,6 +1,6 @@
 clear all; close all; clc
 
-T1 = 5/1023;
+T1 = 5/127;
 F1 = 1/T1;
 tfin = 5;
 
@@ -8,7 +8,7 @@ n = 0:T1:tfin;
 L = length(n);
 NP = 1;
 
-xn = exp(-n)
+xn = cos(n)
 
 NFFT = 2^nextpow2(NP*L);
 xf1 = fft(xn, NFFT)/L
