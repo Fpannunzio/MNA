@@ -1,20 +1,20 @@
 clear all ; close all; clc
-A=1; T=1; 
+A=1; T=2*pi; 
 
-t = 0:1e-4:T;
+t = -pi:1e-2:pi;
 
-n=150;
+n=15;
 sf=0;
 
-f= A.*(t>0 & t <=T/2) - A.*(t>T/2 & t<1);
+f= t.^2;
 plot(t, f, 'r'), hold 'on'
 
-for k=-n:n
+for k=0:n
   if k == 0
     continue
   endif
-  cn = (A/(i*pi*k))*(1-e.^(-i*pi*k));
-  sf = sf + cn*(e.^(i*2*pi*k*t/T));
+  cn = 2*(-1)^(k)/k^2;
+  sf = sf + cn*(e.^(i*k*t));
 end
 
 plot(t,sf)
